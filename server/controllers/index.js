@@ -83,14 +83,7 @@ module.exports.processLoginPage = (req, res, next) => {
                 expiresIn: 604800 // 1 week
             });
 
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Logged in Successfully!', user: {
-                id: user._id,
-                displayName: user.displayName,
-                username: user.username,
-                email: user.email
-            }, token: authToken});
-            */
+         
 
             return res.redirect('/book-list');
         });
@@ -144,13 +137,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         }
         else
         {
-            // if no error exists, then registration is successful
-
-            // redirect the user and authenticate them
-
-            /* TODO - Getting Ready to convert to API
-            res.json({success: true, msg: 'User Registered Successfully!'});
-            */
+           
 
             return passport.authenticate('local')(req, res, () => {
                 res.redirect('/book-list')
